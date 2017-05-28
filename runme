@@ -1,0 +1,9 @@
+docker run --rm -it \
+	--hostname=buildhost_el7 \
+	-v /usr/local/src/rpms/SPECS:/home/builder/rpms/SPECS \
+	-v /usr/local/src/rpms/SOURCES:/home/builder/rpms/SOURCES \
+	-v /usr/local/src/rpms/RPMS:/home/builder/rpms/RPMS \
+	-v /usr/local/src/rpms/SRPMS:/home/builder/rpms/SRPMS \
+	-v /usr/local/src/rpms/rpmmacros:/home/builder/.rpmmacros \
+	guyton/rpm-buildhost-el7
+

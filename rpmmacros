@@ -1,0 +1,36 @@
+#
+# ~/.rpmmacros file
+#
+# This gets all the necessary info from environment variables and system
+# utilities.  The first email address on your gpg keyring should be 
+# your own 
+#
+
+%packager		Me
+
+# This is the product which a packaged item is part of.  Generally we'll leave
+# this blank or set our custom tag.
+# %distribution		%(cat /etc/redhat-release)
+%distribution		My Custom Builds
+%dist			.el7
+
+# The vendor here is the same as the packager.  Use a company or organization
+# if appropriate
+%vendor			My Organization 
+
+%_topdir		/home/builder/rpms
+%_tmppath		/home/builder/rpms/BUILD
+%_builddir		%{_tmppath}
+
+%_sourcedir		%{_topdir}/SOURCES
+%_specdir		%{_topdir}/SPECS
+%_rpmdir		%{_topdir}/RPMS
+%_srcrpmdir		%{_topdir}/SRPMS
+%_rpmfilename		%%{NAME}-%%{VERSION}-%%{RELEASE}.%%{ARCH}.rpm
+
+# %_signature		gpg
+# %_gpg_path		%{_home}/.gnupg
+# %_gpgbin		/usr/bin/gpg
+# %_gpg_name		%(gpg --list-keys | sed -n "s/^uid *//p" |head -1)
+ 
+
